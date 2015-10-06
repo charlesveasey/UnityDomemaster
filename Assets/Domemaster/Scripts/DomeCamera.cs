@@ -49,8 +49,9 @@ public class DomeCamera : MonoBehaviour {
         Target.cullingMask = 0;
 #if UNITY_EDITOR
         TargetResetPending = true;
-    }
 #endif
+    }
+
 
     void Update () {
         // target is null then bail
