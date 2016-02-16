@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+#if SHIPPING_NOT
 [ExecuteInEditMode]
-
+#endif
 /*
 * DomeCamera
 * This class links to the DomeCamera prefab and syncs the 
@@ -14,7 +15,7 @@ public class DomeCamera : MonoBehaviour {
     public Camera Target;                               // Camera target
     private Camera[] DomeCameras;					    // The 5 cameras of the DomeCamera rig
 
-#if UNITY_EDITOR
+#if SHIPPING
     private int StoredCullingMask;                      // Stored culling mask property of the camera
     private CameraClearFlags StoredClearFlags;          // Stored cleared flags property of the camera
     bool TargetResetPending = false;                    // flag to signal the target camera's rending properties should be reset
@@ -27,7 +28,7 @@ public class DomeCamera : MonoBehaviour {
             return; // if target is null then bail
         }
 
-#if UNITY_EDITOR
+#if SHIPPING_NOT
         // store properties that are used to turn off the target camera's rendering
         StoredClearFlags = Target.clearFlags;
         StoredCullingMask = Target.cullingMask;
@@ -47,7 +48,7 @@ public class DomeCamera : MonoBehaviour {
         // disable the rendering of the target camera
         Target.clearFlags = CameraClearFlags.Nothing;
         Target.cullingMask = 0;
-#if UNITY_EDITOR
+#if SHIPPING_NOT
         TargetResetPending = true;
 #endif
     }
@@ -62,7 +63,7 @@ public class DomeCamera : MonoBehaviour {
         transform.position = Target.transform.position;
         transform.rotation = Target.transform.rotation;
 
-#if UNITY_EDITOR
+#if SHIPPING_NOT
         if (!UnityEditor.EditorApplication.isPlaying) {
             // reset the cameras render properties of the target camera on stop
             if (TargetResetPending) {
