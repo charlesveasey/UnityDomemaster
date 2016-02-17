@@ -25,7 +25,7 @@ Shader "DomemasterFisheyeShader" {
 	half4 frag(v2f i) : SV_Target 
 	{
 	
-	 float aperature = 180f;				
+	 float aperature = 180.0;				
 	 float PI = 3.1415926535;
 	 float apertureHalf = 0.5 * aperature * (PI / 180.0);
 	  
