@@ -23,7 +23,7 @@ This applies a fisheye distortion and circular mask to a normal camera. It does 
 To use:  
 1. Import the "Domemaster" package.  
 2. Open up the "Camera shader" folder in the Assets tab.  
-3. Drag the "DomemasterFisheye.cs" script the camera in your scene.  
+3. Drag the "DomemasterFisheye.cs" script to the camera in your scene.  
 4. Drag the "DomemasterFisheyeShader.shader" to the "DomemasterFisheye.cs" script.  
 5. Make sure the "DomemasterFisheye.cs" script is active.
 
