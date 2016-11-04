@@ -12,7 +12,7 @@ This uses either 4 cameras to project a 180 degree or 5 cameras to project a 210
 To use:  
 1. Import the "Domemaster" package.  
 2. Open up the "Camera Rigs" folder in the Assets tab. 
-3. Open up the folder labeled with desired view of view (180, 210, or 240).
+3. Open up the folder labeled with desired view of view (180, 210, or 240).  
 3. Drag the "DomeCamera" prefab to the scene.  
 4. Drag the "Domemaster" prefab to the scene.  
 
